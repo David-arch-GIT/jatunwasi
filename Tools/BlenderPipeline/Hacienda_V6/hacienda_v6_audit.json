@@ -1,0 +1,43 @@
+{
+  "geometry": {
+    "negative_scale": [],
+    "unapplied_scale": [],
+    "missing_uv0": [],
+    "missing_uv1": [],
+    "missing_material": [],
+    "empty_mesh": [],
+    "non_manifold": [],
+    "open_boundary": [],
+    "triangles": 37972,
+    "mesh_objects": 349
+  },
+  "architectural_review": {
+    "status": "READY_FOR_HUMAN_REVIEW_WITH_ROOF_JUNCTION_FLAG",
+    "cycles_completed": 3,
+    "score": 86,
+    "criteria": {
+      "cochabamba_identity": true,
+      "c_shape": true,
+      "courtyard_and_zaguan": true,
+      "masonry_predominance": true,
+      "rectangular_openings": true,
+      "continuous_balcony": true,
+      "human_scale": true,
+      "closed_roofs": true,
+      "roof_junctions": false,
+      "wall_thickness": true,
+      "no_floating_parts": true,
+      "light_materials": true,
+      "circulation": true
+    },
+    "human_review_required": true,
+    "approved_for_presentation": false,
+    "notes": [
+      "Modelo procedural original V6; no reutiliza geometria previa.",
+      "Ciclo 1 rechazado por lectura cromatica insuficiente; ciclo 2 incorpora shaders Principled y World Sky.",
+      "Ciclo 2 requirio limpieza de encuentros de cubierta y despeje del eje del portal; corregido en ciclo 3.",
+      "La revision final de identidad y encuentros se reserva a inspeccion humana de los 12 renders.",
+      "Pendiente: la vista 09 no demuestra un canal de valle resuelto con claridad suficiente; no se valida ROOF_JUNCTIONS."
+    ]
+  }
+}

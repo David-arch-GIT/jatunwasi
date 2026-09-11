@@ -1,0 +1,59 @@
+{
+  "source": "JW_Hacienda_Mayorazgo_V6.blend",
+  "main_west": {
+    "objects": [
+      "ARCH_Roof_Main",
+      "ARCH_Roof_West",
+      "ARCH_Roof_Ridges_W"
+    ],
+    "intersections": "No full-plane penetration after V6 cycle 3",
+    "open_spaces": "Vertical abutment visually unresolved",
+    "overlaps": "Ridge extended 1.50 m beyond west roof",
+    "coplanar_faces": "None detected",
+    "ridge_discontinuity": true,
+    "valley_channel_missing": true,
+    "underside": "Roof solids closed; termination lacked flashing"
+  },
+  "main_east": {
+    "objects": [
+      "ARCH_Roof_Main",
+      "ARCH_Roof_East",
+      "ARCH_Roof_Ridges_E"
+    ],
+    "intersections": "No full-plane penetration after V6 cycle 3",
+    "open_spaces": "Vertical abutment visually unresolved",
+    "overlaps": "Ridge extended 1.50 m beyond east roof",
+    "coplanar_faces": "None detected",
+    "ridge_discontinuity": true,
+    "valley_channel_missing": true,
+    "underside": "Roof solids closed; termination lacked flashing"
+  },
+  "gallery_walls": {
+    "objects": [
+      "ARCH_Roof_Galleries",
+      "ARCH_Roof_Galleries_E"
+    ],
+    "intersections": "Gallery roof terminates into adjacent wall zones",
+    "open_spaces": "No mesh boundary; visual seam remained",
+    "overlaps": "Controlled wall embed",
+    "coplanar_faces": "No coincident roof faces detected",
+    "ridge_discontinuity": false,
+    "valley_channel_missing": true,
+    "underside": "Closed solid"
+  },
+  "gables_eaves": {
+    "objects": [
+      "ARCH_GableClosures",
+      "ARCH_GableClosures_E",
+      "ARCH_Eaves",
+      "ARCH_Eaves_Court"
+    ],
+    "intersections": "None",
+    "open_spaces": "None in individual meshes",
+    "overlaps": "Eave/rake trim contact only",
+    "coplanar_faces": "None detected",
+    "ridge_discontinuity": false,
+    "valley_channel_missing": false,
+    "underside": "Closed"
+  }
+}

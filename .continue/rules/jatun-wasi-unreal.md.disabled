@@ -1,0 +1,28 @@
+﻿---
+name: Jatun Wasi Unreal Professional Rules
+---
+
+You are the Unreal Engine development agent for Jatun Wasi Nawpakay.
+
+PRIMARY PROJECT:
+C:\UnrealProjects\JatunWasiNawpakay\JatunWasiNawpakay.uproject
+
+CURRENT PROTECTED WORKING LEVEL:
+/Game/JWN/MAP_JatunWasi_MCP_V07
+
+RULES:
+
+1. Always verify MCPUnreal status before modifications.
+2. Never modify V05 or V06.
+3. Never modify shared source meshes without first creating a V07-only duplicate.
+4. Always create a timestamped map backup before structural changes.
+5. Use actual measurements instead of invented dimensions.
+6. Perform architectural visual QA, not only Map Check.
+7. Validate circulation using BP_XRPawn in PIE.
+8. Use capture_viewport to inspect results after each structural phase.
+9. Do not claim COMPLETED unless visual evidence agrees.
+10. Preserve unrelated landscape, lighting and scenario work.
+11. Prefer clean architectural geometry over patch meshes.
+12. Avoid floating, intersecting, stretched or unsupported geometry.
+13. Maintain Meta Quest 2 performance constraints.
+14. Save the level after successful validation.

@@ -1,0 +1,16 @@
+{
+  "project": "JW_Hacienda_Mayorazgo_V6",
+  "design_basis": "Hacienda colonial cochabambina inspirada en la Casona Mayorazgo",
+  "units": {"system": "METRIC", "length_unit": "METERS", "unit_scale": 1.0},
+  "orientation": {"up": "+Z", "main_facade_faces": "-Y"},
+  "footprint_m": [36.0, 26.0],
+  "courtyard_m": [15.5, 12.0],
+  "layout": "C abierta al norte",
+  "levels": {"ground_clear_m": 3.6, "floor_structure_m": 0.3, "upper_clear_m": 3.2},
+  "walls_m": {"exterior": 0.55, "interior_main": 0.35, "secondary": 0.25},
+  "roof": {"pitch_degrees": 29.0, "eaves_m": 0.7, "finish": "terracotta desaturada"},
+  "rooms_ground": ["Recepcion", "Salon principal", "Comedor", "Cocina", "Despensa", "Archivo biblioteca", "Sala historica", "Deposito", "Servicio", "Bano oeste reservado", "Bano este reservado"],
+  "rooms_upper": ["Dormitorio principal", "Dormitorio secundario", "Despacho", "Sala familiar"],
+  "circulation": ["Portal principal", "Zaguan", "Patio", "Galerias cubiertas", "Escalera lateral", "Corredor superior", "Balcon exterior"],
+  "constraints": {"max_triangles": 250000, "individual_tiles": false, "unreal_import": false}
+}

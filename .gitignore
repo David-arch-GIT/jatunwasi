@@ -1,0 +1,60 @@
+# ============================================================
+#  JatunWasi Ñawpaqay - .gitignore (proyecto Unreal Engine 5.7)
+#  Se versiona: el trabajo propio (Content/JWN), Config, Scripts_Tesis,
+#  el .uproject y el codigo del plugin. Se EXCLUYE: artefactos de build
+#  (se regeneran solos) y los packs de terceros gigantes (se reimportan).
+# ============================================================
+
+# --- Maquinaria del plugin MCP (toolchain Go + cache, NO es la tesis) ---
+External/
+
+# --- Backups sueltos del .uproject ---
+*.backup_*
+
+# --- Artefactos de build de Unreal (se regeneran, NO versionar) ---
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.suo
+.vs/
+.vscode/
+
+# --- Artefactos de build dentro de plugins ---
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# --- Paquetes / instaladores (enormes, NO versionar) ---
+*.apk
+*.obb
+*.zip
+
+# --- Datos de iluminacion horneada y backups (se regeneran) ---
+*_BuiltData.uasset
+*_BuiltData.uasset.bak
+*.bak
+
+# ============================================================
+#  Packs de TERCEROS (estaticos, gigantes, reimportables).
+#  NO se versionan para que el repo sea manejable (< 1 GB).
+#  Estan respaldados en sus .zip y en el marketplace.
+#  Si clonas en limpio: reimportar estos packs para abrir el proyecto.
+# ============================================================
+Content/StylescapeHD/
+Content/Megascans/
+Content/MSPresets/
+Content/TileableForestRoad/
+Content/XRMannequins/
+Content/Weapons/
+Content/VRTemplate/
+Content/VRSpectator/
+Content/XRFramework/
+Content/LevelPrototyping/
+
+# --- Config de herramientas (no es la tesis) ---
+.claude/
+.codex/

@@ -1,0 +1,14 @@
+{
+  "level": "/Game/JWN/MAP_JatunWasi_MCP_V03",
+  "protected_levels": [
+    "/Game/JWN/MAP_JatunWasi_MCP_V02",
+    "/Game/JWN/MAP_JatunWasi_MCP_V01",
+    "/Game/JWN/MAP_JatunWasi_AI_V02"
+  ],
+  "asset_root": "/Game/JWN/Architecture/Hacienda_V5",
+  "origin_cm": [-7000.0, -2500.0, 5.0],
+  "yaw_deg": 12.09475708,
+  "retain_as_new_v5_assets": ["Foundation", "InteriorWalls_Ground", "InteriorWalls_Upper", "GroundFloors", "UpperFloors", "Staircase", "Ceilings", "InteriorDoors", "Windows"],
+  "replace": ["ExteriorShell", "StonePlinth", "WoodTrim", "Balcony", "MainEntrance", "Roof_Main", "Roof_Galleries", "CourtyardGallery", "ColumnsArches", "materials", "interior_composition", "interior_lighting"],
+  "phases": ["backup", "roof", "facade", "courtyard", "materials", "interiors", "lighting", "qa", "pie", "audit"]
+}

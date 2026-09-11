@@ -1,0 +1,52 @@
+{
+  "status": "READY_FOR_HUMAN_REVIEW_NOT_APPROVED",
+  "cycles_completed": 3,
+  "visual_score": 94,
+  "editable_mesh_objects": 377,
+  "exported_mesh_objects": 20,
+  "export_audit": {
+    "negative": [],
+    "non_manifold": [],
+    "open": [],
+    "missing_uv0": [],
+    "missing_uv1": [],
+    "missing_material": [],
+    "empty": [],
+    "triangles": 86788
+  },
+  "editable_audit": {
+    "negative": [],
+    "non_manifold": [],
+    "open": [],
+    "missing_uv0": [],
+    "missing_uv1": [],
+    "missing_material": [
+      "V7_Window_Glass"
+    ],
+    "empty": [],
+    "triangles": 86788
+  },
+  "criteria": {
+    "portal_detail": true,
+    "door_detail": true,
+    "window_detail": true,
+    "balcony_structural": true,
+    "gallery_structure": true,
+    "roof_junctions_preserved": true,
+    "roof_edge_detail": true,
+    "courtyard_material": true,
+    "plaster_material": true,
+    "wood_material": true,
+    "roof_material": true,
+    "texel_density": true,
+    "human_reference": true
+  },
+  "renders_reviewed": 14,
+  "approved_for_presentation": false,
+  "human_review_required": true,
+  "review_notes": [
+    "Ciclo 1 rechazado por patio gris y vistas 13/14 obstruidas.",
+    "Ciclo 2 corrige material de tierra compactada, pero las vistas 13/14 siguen obstruidas.",
+    "Ciclo 3 ubica la camara interior en un recinto libre y presenta el corredor superior desde el patio."
+  ]
+}

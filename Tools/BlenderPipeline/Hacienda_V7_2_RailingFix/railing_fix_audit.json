@@ -1,0 +1,100 @@
+{
+  "object": "EXP_ExteriorBalcony_RailingFix",
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "dimensions": [
+    31.0,
+    9.875,
+    1.959999918937683
+  ],
+  "triangles": 10584,
+  "non_manifold": 0,
+  "open_boundaries": 0,
+  "negative_scale": 0,
+  "uv_layers": [
+    "UVMap",
+    "LightmapUV"
+  ],
+  "material_slots": [
+    "MAT_Dark_Wood"
+  ],
+  "original_dimensions": [
+    31.0,
+    9.875,
+    1.959999918937683
+  ],
+  "dimensions_unchanged": true,
+  "original_material_slots": [
+    "MAT_Dark_Wood"
+  ],
+  "material_slots_unchanged": true,
+  "original_uv_layers": [
+    "UVMap",
+    "LightmapUV"
+  ],
+  "uv0_valid": true,
+  "uv1_valid": true,
+  "normals_valid": true,
+  "opening_width_cm": 172.00000000000006,
+  "removed_components": [
+    {
+      "kind": "handrail",
+      "center": [
+        0.0,
+        -6.649999618530273,
+        4.920000076293945
+      ],
+      "dimensions": [
+        31.0,
+        0.10000038146972656,
+        0.11999988555908203
+      ]
+    },
+    {
+      "kind": "baluster",
+      "center": [
+        -6.0,
+        -6.649999618530273,
+        4.420000076293945
+      ],
+      "dimensions": [
+        0.06499958038330078,
+        0.06500053405761719,
+        1.0
+      ]
+    },
+    {
+      "kind": "baluster",
+      "center": [
+        -5.25,
+        -6.649999618530273,
+        4.420000076293945
+      ],
+      "dimensions": [
+        0.06499958038330078,
+        0.06500053405761719,
+        1.0
+      ]
+    },
+    {
+      "kind": "baluster",
+      "center": [
+        -4.5,
+        -6.649999618530273,
+        4.420000076293945
+      ],
+      "dimensions": [
+        0.06499958038330078,
+        0.06500053405761719,
+        1.0
+      ]
+    }
+  ],
+  "terminal_posts": {
+    "left_post_x": -6.202,
+    "right_post_x": -4.378
+  }
+}

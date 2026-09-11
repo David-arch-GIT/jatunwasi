@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETE_AND_LEVEL_SAVED",
+  "level": "/Game/JWN/MAP_JatunWasi_MCP_V02",
+  "pipeline": "DynamicMesh -> GeometryScript primitives/UVs/normals/tangents/collision -> StaticMesh",
+  "footprint_m": [40.0, 33.0],
+  "courtyard_m": [15.5, 12.0],
+  "facade_yaw_deg": 12.094757077,
+  "ground_z_cm": -5.0,
+  "assets": {"static_mesh": 21, "material_instances": 7},
+  "actors": {"architecture_and_openings": 23, "interiors": 16, "lanterns": 4, "lights": 4, "total": 47},
+  "mesh_validation": {"uv0": true, "uv1": true, "normals": true, "tangents": true, "collision": true},
+  "accessibility": {"all_rooms_reachable_math": true, "unreachable_rooms": []},
+  "walk_tests": {
+    "entrance_zaguan_patio": true,
+    "patio_salon": true,
+    "salon_patio_dining": true,
+    "dining_patio_archive": true,
+    "archive_patio_stair": true,
+    "stair_to_upper_corridor": true
+  },
+  "fps_pc_approx": 118.70,
+  "map_check": {"errors": 0, "warnings": 0},
+  "vegetation_removed": 0,
+  "captures_required_completed": 12,
+  "level_saved": true,
+  "corrected_during_review": [
+    "Rotator positional ordering replaced with named arguments",
+    "Facade articulation and PBR material parents",
+    "Roof axes, centers, ridges and gallery slopes",
+    "Central zaguan opening",
+    "Stair landing continuity and real floor/ceiling stairwell",
+    "Interior light placement and intensity",
+    "Large HISM dynamic-shadow Map Check warnings"
+  ],
+  "errors": []
+}

@@ -1,0 +1,23 @@
+{
+  "status": "COMPLETE",
+  "asset_root": "/Game/JWN/Architecture/Hacienda_V4",
+  "static_mesh_assets": [
+    "SM_HACV4_Foundation", "SM_HACV4_ExteriorShell", "SM_HACV4_InteriorWalls_Ground",
+    "SM_HACV4_InteriorWalls_Upper", "SM_HACV4_GroundFloors", "SM_HACV4_UpperFloors",
+    "SM_HACV4_CourtyardGallery", "SM_HACV4_ColumnsArches", "SM_HACV4_Staircase",
+    "SM_HACV4_Balcony", "SM_HACV4_Roof_Main", "SM_HACV4_Roof_Galleries",
+    "SM_HACV4_Ceilings", "SM_HACV4_StonePlinth", "SM_HACV4_WoodTrim",
+    "SM_HACV4_MainDoor_Left", "SM_HACV4_MainDoor_Right", "SM_HACV4_InteriorDoor_A",
+    "SM_HACV4_InteriorDoor_B", "SM_HACV4_Window_A", "SM_HACV4_Window_B"
+  ],
+  "material_instances": [
+    "MI_HACV4_Plaster_Exterior", "MI_HACV4_Plaster_Interior", "MI_HACV4_Stone",
+    "MI_HACV4_Wood", "MI_HACV4_Roof_Terracotta", "MI_HACV4_Floor_Tile",
+    "MI_HACV4_Floor_Wood"
+  ],
+  "architecture_and_opening_actors": 23,
+  "interior_prop_actors": 16,
+  "lantern_mesh_actors": 4,
+  "light_actors": 4,
+  "total_actors": 47
+}

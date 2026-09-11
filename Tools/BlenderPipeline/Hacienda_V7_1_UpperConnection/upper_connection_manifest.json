@@ -1,0 +1,34 @@
+{
+  "source_object": "EXP_UpperLandingConnector",
+  "ucx_objects": [
+    "UCX_EXP_UpperLandingConnector_00",
+    "UCX_EXP_UpperLandingConnector_01",
+    "UCX_EXP_UpperLandingConnector_02"
+  ],
+  "fbx": "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_1_UpperConnection\\JW_Hacienda_V7_UpperConnection.fbx",
+  "unreal_destination": "/Game/JWN/Architecture/Hacienda_V7/StructuralFix",
+  "unreal_asset": "SM_HACV7_UpperLandingConnector",
+  "actor_name": "HACV7_UpperLandingConnector",
+  "actor_folder": "JatunWasi/Hacienda_V7/Architecture/StructuralFix",
+  "transform": {
+    "location_cm": [
+      -7587.72909386006,
+      -2281.566,
+      0.0
+    ],
+    "rotation_deg": [
+      0.0,
+      12.094757080078134,
+      0.0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "material_slots": [
+    "MI_HACV7_Brick_Floor",
+    "MI_HACV7_Dark_Wood"
+  ]
+}

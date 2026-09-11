@@ -1,0 +1,54 @@
+{
+  "name": "JW_Hacienda_Mayorazgo_V7",
+  "source": "../Hacienda_V6_1/JW_Hacienda_Mayorazgo_V6_1.blend",
+  "diagnosis": {
+    "source": "JW_Hacienda_Mayorazgo_V6_1.blend",
+    "mandatory_findings": [
+      "fachada plana",
+      "portal sin jerarquia",
+      "puertas y ventanas sin detalle",
+      "balcon generico",
+      "pilares sin terminacion",
+      "cubierta visualmente lisa",
+      "ausencia de estructura visible bajo aleros",
+      "patio vacio",
+      "materiales planos",
+      "render sobreexpuesto",
+      "referencia humana inadecuada",
+      "fragmentacion excesiva: 349 meshes exportables"
+    ],
+    "preserved": [
+      "distribucion C",
+      "huella 36x26 m",
+      "patio 15.5x12 m",
+      "muros y habitaciones",
+      "zaguan y escalera",
+      "cubiertas, limahoyas y cumbreras",
+      "UV existentes"
+    ]
+  },
+  "files": {
+    "blend": "JW_Hacienda_Mayorazgo_V7.blend",
+    "review_glb": "JW_Hacienda_Mayorazgo_V7_Review.glb",
+    "unreal_fbx": "JW_Hacienda_Mayorazgo_V7_Unreal.fbx",
+    "renders": [
+      "01_Aerial_Final.png",
+      "02_Facade_From_Path_Final.png",
+      "03_Main_Portal_Final.png",
+      "04_Window_Detail_Final.png",
+      "05_Balcony_Detail_Final.png",
+      "06_Zaguan_Final.png",
+      "07_Courtyard_Wide_Final.png",
+      "08_Courtyard_Gallery_Final.png",
+      "09_Roof_Aerial_Final.png",
+      "10_Roof_Underside_Final.png",
+      "11_Materials_Close_Final.png",
+      "12_Human_Scale_Final.png",
+      "13_Ground_Floor_Interior_Final.png",
+      "14_Upper_Corridor_Final.png"
+    ]
+  },
+  "editable_mesh_objects": 377,
+  "exported_mesh_objects": 20,
+  "triangles": 86788
+}

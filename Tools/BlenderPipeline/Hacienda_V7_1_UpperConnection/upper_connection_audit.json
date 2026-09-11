@@ -1,0 +1,24 @@
+{
+  "triangles": 684,
+  "open_boundaries": 0,
+  "non_manifold_edges": 0,
+  "negative_scale": 0,
+  "missing_uv0": 0,
+  "missing_uv1": 0,
+  "material_slots": [
+    "M_ColonialFloor_Preview",
+    "M_Wood_Preview"
+  ],
+  "missing_materials": 0,
+  "ucx_count": 3,
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "dimensions_m": [
+    1.8200000524520874,
+    2.3210911750793457,
+    1.944582462310791
+  ]
+}

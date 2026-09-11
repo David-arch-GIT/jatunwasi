@@ -1,0 +1,20 @@
+Hacienda V4 build log initialized.
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=21 actors=23
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0
+FINAL MapCheck=0 errors, 0 warnings
+FINAL PIE walk routes=PASS stair_to_upper=PASS FPS=118.70
+FINAL captures=12/12 level_saved=YES
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=24
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0
+START level=/Game/JWN/MAP_JatunWasi_MCP_V02
+BUILD_COMPLETE assets=0 actors=0

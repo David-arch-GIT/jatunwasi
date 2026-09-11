@@ -1,0 +1,14 @@
+﻿# Jatun Wasi — Unreal MCP Rules
+
+- Always call the mcp-unreal status tool first.
+- Confirm the current level before modifying anything.
+- Modify only /Game/JWN/MAP_JatunWasi_MCP_V08_HaciendaFix_CLEAN.
+- Preserve V05, V06, V07 and all unrelated environment work.
+- Save and create a timestamped V08 backup before structural modifications.
+- Use get_level_actors, get_actor_components and capture_viewport before editing.
+- Use execute_script for controlled Unreal Python batch operations.
+- Duplicate shared meshes as V07-only assets before editing them.
+- Never claim success from Map Check alone.
+- Validate visually and in PIE using BP_XRPawn.
+- Save the level after successful validation.
+- Never invent measurements, captures or test results.

@@ -1,0 +1,26 @@
+{
+  "gap_length_cm": 199.40184877893353,
+  "connector_length_cm": 219.40184877893353,
+  "walkable_width_cm": 170.0,
+  "floor_thickness_cm": 20.0,
+  "landing_top_z_cm": 441.0,
+  "corridor_top_z_cm": 432.0,
+  "slope_degrees": -2.348991482150126,
+  "railing_height_cm": 105.0,
+  "support_system": "end ledgers, twin longitudinal beams, secondary joists, four anchored timber corbels",
+  "world_location_cm": [
+    -7587.72909386006,
+    -2281.566,
+    0.0
+  ],
+  "world_rotation_deg": [
+    0.0,
+    12.094757080078134,
+    0.0
+  ],
+  "world_scale": [
+    1,
+    1,
+    1
+  ]
+}

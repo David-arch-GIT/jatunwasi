@@ -1,0 +1,16 @@
+﻿{
+    "mcpServers":  {
+                       "mcp-unreal":  {
+                                          "command":  "C:\\UnrealProjects\\JatunWasiNawpakay\\External\\mcp-unreal\\bin\\mcp-unreal.exe",
+                                          "args":  [
+
+                                                   ],
+                                          "env":  {
+                                                      "MCP_UNREAL_PROJECT":  "C:\\UnrealProjects\\JatunWasiNawpakay\\JatunWasiNawpakay.uproject",
+                                                      "PLUGIN_PORT":  "8090",
+                                                      "RC_API_PORT":  "30010",
+                                                      "MCP_UNREAL_LOG_LEVEL":  "info"
+                                                  }
+                                      }
+                   }
+}

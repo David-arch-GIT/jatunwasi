@@ -1,0 +1,10 @@
+{
+  "units": "centimeters",
+  "wall": {"width": 400, "height": 360, "thickness": 45},
+  "door": {"clear_width": 125, "clear_height": 260},
+  "window": {"clear_width": 125, "clear_height": 150, "sill_height": 95},
+  "arch": {"clear_span": 300, "total_height": 330, "thickness": 45, "segments": 24},
+  "column": {"shaft_section": [42, 48], "base_section": [58, 65], "height": 330},
+  "roof": {"pitch_degrees": 28, "eave": 65, "thickness": 15},
+  "railing": {"height": 105}
+}

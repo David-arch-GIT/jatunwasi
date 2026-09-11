@@ -1,0 +1,29 @@
+{
+  "version": "Hacienda V4 Geometry Script",
+  "level": "/Game/JWN/MAP_JatunWasi_MCP_V02",
+  "protected_levels": [
+    "/Game/JWN/MAP_JatunWasi_MCP_V01",
+    "/Game/JWN/MAP_JatunWasi_AI_V02"
+  ],
+  "asset_root": "/Game/JWN/Architecture/Hacienda_V4",
+  "origin_cm": [-7000.0, -2500.0, 5.0],
+  "facade_yaw_deg": 12.094757077,
+  "footprint_cm": [4000.0, 3300.0],
+  "courtyard_cm": [1550.0, 1200.0],
+  "ground_clear_height_cm": 360.0,
+  "floor_slab_cm": 25.0,
+  "upper_clear_height_cm": 320.0,
+  "wall_cm": {"exterior": 45.0, "primary": 30.0, "secondary": 22.0},
+  "circulation_cm": {"zaguan": 340.0, "gallery": 240.0, "corridor": 190.0, "stair": 160.0},
+  "openings_cm": {"main_door": [260.0, 280.0], "interior_door": [120.0, 250.0], "window_sill": 95.0},
+  "rooms_ground": ["Acceso principal", "Zaguan", "Patio", "Galeria norte", "Galeria sur", "Galeria este", "Galeria oeste", "Recepcion", "Salon principal", "Comedor", "Cocina", "Despensa", "Archivo/Biblioteca", "Sala historica", "Deposito", "Servicio", "Escalera", "Bano reservado A", "Bano reservado B"],
+  "rooms_upper": ["Corredor superior", "Balcon al patio", "Dormitorio principal", "Dormitorio secundario", "Despacho", "Sala familiar", "Balcon exterior"],
+  "access_graph": {
+    "Acceso principal": ["Zaguan"],
+    "Zaguan": ["Patio", "Recepcion"],
+    "Patio": ["Salon principal", "Comedor", "Archivo/Biblioteca", "Sala historica", "Cocina", "Escalera", "Galeria norte", "Galeria sur", "Galeria este", "Galeria oeste", "Bano reservado A", "Bano reservado B"],
+    "Cocina": ["Despensa", "Servicio", "Deposito"],
+    "Escalera": ["Corredor superior"],
+    "Corredor superior": ["Balcon al patio", "Dormitorio principal", "Dormitorio secundario", "Despacho", "Sala familiar", "Balcon exterior"]
+  }
+}

@@ -1,0 +1,11 @@
+
+START /Game/JWN/MAP_JatunWasi_MCP_V04
+BUILD_COMPLETE assets=14 materials=6 preview=18 backup=47
+
+RECOVERY_AUDIT: assets=14 materials=6 preview=18 duplicates=0 invalid_refs=0
+CORRECTION_CYCLE_1: arch/gable/roof/door/window/material and placement corrections
+CORRECTION_CYCLE_2: arch/gable axis correction, plaster tuning, courtyard placement correction
+FINAL_VISUAL_AUDIT: REJECTED score=4.1 critical=2 major=4 minor=2
+MAP_CHECK: errors=0 warnings=0
+PIE: completed errors=0
+LEVEL_SAVED: false

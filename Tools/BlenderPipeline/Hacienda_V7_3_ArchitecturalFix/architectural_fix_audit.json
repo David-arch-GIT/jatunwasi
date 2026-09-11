@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "source": "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7\\JW_Hacienda_Mayorazgo_V7.blend",
+  "source_removed": [
+    "SITE_FacadePath"
+  ],
+  "foundation": {
+    "triangles": 1728,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Stone_Plinth",
+      "MAT_Brick_Floor",
+      "MAT_Dark_Wood",
+      "MAT_Compacted_Earth"
+    ]
+  },
+  "upper_wall": {
+    "triangles": 2952,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Lime_Plaster_Exterior"
+    ]
+  },
+  "stair": {
+    "triangles": 4860,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Stone_Floor",
+      "MAT_Dark_Wood"
+    ]
+  },
+  "rooftrim": {
+    "triangles": 756,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Terracotta_Roof",
+      "MAT_Lime_Plaster_Exterior",
+      "MAT_Dark_Wood"
+    ]
+  },
+  "connector": {
+    "triangles": 4536,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Brick_Floor",
+      "MAT_Dark_Wood"
+    ]
+  },
+  "apron": {
+    "triangles": 78,
+    "open_boundaries": 0,
+    "non_manifold": 0,
+    "uv_channels": 2,
+    "materials": [
+      "MAT_Brick_Floor"
+    ]
+  },
+  "outputs": [
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\EXP_Foundation_Floors_ArchitecturalFix.fbx",
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\EXP_ExteriorWalls_Upper_ArchitecturalFix.fbx",
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\EXP_Staircase_ArchitecturalFix.fbx",
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\EXP_RoofTrim_ArchitecturalFix.fbx",
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\SM_HACV7_UpperLandingConnector_ArchitecturalFix.fbx",
+    "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_3_ArchitecturalFix\\SM_HACV7_EntranceApron_ArchitecturalFix.fbx"
+  ]
+}

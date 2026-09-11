@@ -1,0 +1,24 @@
+{
+  "status": "FINAL_AUDIT_FAILED_UNSAVED",
+  "errors": [
+    "Final visual threshold not met: overall 3.8/10, 4 critical, 8 major.",
+    "Continuous physical route could not be verified with teleport-only player controls."
+  ],
+  "warnings": [
+    "V4 backup retained and V03 intentionally not saved."
+  ],
+  "stages": {
+    "backup": true,
+    "assets": true,
+    "architecture": true,
+    "interiors": true,
+    "lighting": true,
+    "map_check": {"errors": 0, "warnings": 0},
+    "pie": {"started": true, "stopped": true, "teleport_points": 10, "continuous_route_verified": false},
+    "final_audit": {"overall": 3.8, "critical": 4, "major": 8, "minor": 3, "approved": false}
+  },
+  "v5_assets_present": 36,
+  "v5_actors_present": 75,
+  "captures_completed": 22,
+  "level_saved": false
+}

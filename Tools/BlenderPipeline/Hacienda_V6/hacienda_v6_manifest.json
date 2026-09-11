@@ -1,0 +1,55 @@
+{
+  "name": "JW_Hacienda_Mayorazgo_V6",
+  "blender_version": "5.2.0 LTS",
+  "files": {
+    "blend": "JW_Hacienda_Mayorazgo_V6.blend",
+    "glb": "JW_Hacienda_Mayorazgo_V6.glb",
+    "fbx": "JW_Hacienda_Mayorazgo_V6.fbx",
+    "renders": [
+      "01_Aerial_ThreeQuarter.png",
+      "02_Facade_From_Path.png",
+      "03_Main_Portal.png",
+      "04_Zaguan_To_Courtyard.png",
+      "05_Courtyard_Wide.png",
+      "06_Courtyard_Gallery.png",
+      "07_Upper_Balcony.png",
+      "08_Roof_Overview.png",
+      "09_Roof_Junctions.png",
+      "10_Ground_Floor_Plan.png",
+      "11_Upper_Floor_Plan.png",
+      "12_Human_Scale.png"
+    ]
+  },
+  "footprint_m": [
+    36,
+    26
+  ],
+  "courtyard_m": [
+    15.5,
+    12
+  ],
+  "rooms": {
+    "ground": [
+      "Recepcion",
+      "Salon principal",
+      "Comedor",
+      "Cocina",
+      "Despensa",
+      "Archivo biblioteca",
+      "Sala historica",
+      "Deposito",
+      "Servicio",
+      "Bano oeste reservado",
+      "Bano este reservado"
+    ],
+    "upper": [
+      "Dormitorio principal",
+      "Dormitorio secundario",
+      "Despacho",
+      "Sala familiar"
+    ]
+  },
+  "exported_mesh_objects": 349,
+  "triangles": 37972,
+  "reference_exported": false
+}

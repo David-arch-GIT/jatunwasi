@@ -1,0 +1,48 @@
+{
+  "status": "BUILT",
+  "assets": [
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Solid",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Door",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Window",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Arch_Bay",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Column",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Gallery_Beam",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Roof_Slope",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Roof_Ridge",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Gable_Closure",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Eaves_Fascia",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Balcony_Railing",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Floor_Module",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Stone_Plinth",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wood_Trim"
+  ],
+  "materials": [
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Interior",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Stone_Plinth",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Dark_Wood",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta",
+    "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Floor_Colonial"
+  ],
+  "preview_actors": [
+    "HACKIT_Wall_Window_L",
+    "HACKIT_Wall_Door",
+    "HACKIT_Wall_Window_R",
+    "HACKIT_Stone_Plinth",
+    "HACKIT_Cornice",
+    "HACKIT_Roof_L",
+    "HACKIT_Roof_R",
+    "HACKIT_Roof_Ridge",
+    "HACKIT_Gable_Closures",
+    "HACKIT_Eaves",
+    "HACKIT_Balcony",
+    "HACKIT_Gallery_Floor",
+    "HACKIT_Arch_A",
+    "HACKIT_Arch_B",
+    "HACKIT_Column_A",
+    "HACKIT_Column_B",
+    "HACKIT_Column_C",
+    "HACKIT_Gallery_Beam"
+  ],
+  "v4_backup_actors": 47
+}

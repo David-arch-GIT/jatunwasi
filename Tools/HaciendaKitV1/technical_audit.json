@@ -1,0 +1,595 @@
+{
+  "meshes": [
+    {
+      "name": "SM_HACKIT_Wall_Solid",
+      "triangles": 12,
+      "vertices": 32,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 1,
+      "bounds_min": [
+        -200.0,
+        -22.5,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        22.5,
+        360.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 1
+    },
+    {
+      "name": "SM_HACKIT_Wall_Door",
+      "triangles": 36,
+      "vertices": 88,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -200.0,
+        -22.5,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        22.5,
+        360.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    },
+    {
+      "name": "SM_HACKIT_Wall_Window",
+      "triangles": 48,
+      "vertices": 116,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 4,
+      "bounds_min": [
+        -200.0,
+        -22.5,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        22.5,
+        360.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 4
+    },
+    {
+      "name": "SM_HACKIT_Arch_Bay",
+      "triangles": 220,
+      "vertices": 308,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -180.0,
+        -22.5,
+        -180.0
+      ],
+      "bounds_max": [
+        180.0,
+        307.5,
+        180.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    },
+    {
+      "name": "SM_HACKIT_Column",
+      "triangles": 36,
+      "vertices": 86,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -29.0,
+        -32.5,
+        0.0
+      ],
+      "bounds_max": [
+        29.0,
+        32.5,
+        330.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    },
+    {
+      "name": "SM_HACKIT_Gallery_Beam",
+      "triangles": 36,
+      "vertices": 88,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -200.0,
+        -11.0,
+        -90.0
+      ],
+      "bounds_max": [
+        200.0,
+        11.0,
+        24.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    },
+    {
+      "name": "SM_HACKIT_Roof_Slope",
+      "triangles": 12,
+      "vertices": 32,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 1,
+      "bounds_min": [
+        -265.0,
+        -193.35476684570312,
+        -107.5584945678711
+      ],
+      "bounds_max": [
+        265.0,
+        193.35476684570312,
+        107.5584945678711
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 1
+    },
+    {
+      "name": "SM_HACKIT_Roof_Ridge",
+      "triangles": 36,
+      "vertices": 90,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -265.0,
+        -21.048397064208984,
+        -21.94272804260254
+      ],
+      "bounds_max": [
+        265.0,
+        21.048397064208984,
+        15.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    },
+    {
+      "name": "SM_HACKIT_Gable_Closure",
+      "triangles": 8,
+      "vertices": 14,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 1,
+      "bounds_min": [
+        -45.0,
+        -22.5,
+        -215.0
+      ],
+      "bounds_max": [
+        4.973799150320701e-14,
+        92.5,
+        215.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 1
+    },
+    {
+      "name": "SM_HACKIT_Eaves_Fascia",
+      "triangles": 24,
+      "vertices": 60,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 2,
+      "bounds_min": [
+        -265.0,
+        -9.0,
+        -27.0
+      ],
+      "bounds_max": [
+        265.0,
+        9.0,
+        14.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 2
+    },
+    {
+      "name": "SM_HACKIT_Balcony_Railing",
+      "triangles": 108,
+      "vertices": 246,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 9,
+      "bounds_min": [
+        -200.0,
+        -9.0,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        9.0,
+        109.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 9
+    },
+    {
+      "name": "SM_HACKIT_Floor_Module",
+      "triangles": 12,
+      "vertices": 32,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 1,
+      "bounds_min": [
+        -200.0,
+        -150.0,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        150.0,
+        15.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 1
+    },
+    {
+      "name": "SM_HACKIT_Stone_Plinth",
+      "triangles": 12,
+      "vertices": 32,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 1,
+      "bounds_min": [
+        -200.0,
+        -27.5,
+        0.0
+      ],
+      "bounds_max": [
+        200.0,
+        27.5,
+        80.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 1
+    },
+    {
+      "name": "SM_HACKIT_Wood_Trim",
+      "triangles": 36,
+      "vertices": 88,
+      "uv_channels": 2,
+      "material_slots": 1,
+      "null_slots": 0,
+      "simple_collision": 3,
+      "bounds_min": [
+        -200.0,
+        -9.0,
+        -110.0
+      ],
+      "bounds_max": [
+        200.0,
+        9.0,
+        12.0
+      ],
+      "closed": true,
+      "open_edges": 0,
+      "uv_sets": 2,
+      "has_normals": true,
+      "components": 3
+    }
+  ],
+  "actors": [
+    {
+      "label": "HACKIT_Wall_Window_L",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Window.SM_HACKIT_Wall_Window",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Wall_Door",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Door.SM_HACKIT_Wall_Door",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Wall_Window_R",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wall_Window.SM_HACKIT_Wall_Window",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Stone_Plinth",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Stone_Plinth.SM_HACKIT_Stone_Plinth",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Stone_Plinth.MI_HACKIT_Stone_Plinth"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Cornice",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Wood_Trim.SM_HACKIT_Wood_Trim",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Dark_Wood.MI_HACKIT_Dark_Wood"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Roof_L",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Roof_Slope.SM_HACKIT_Roof_Slope",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta.MI_HACKIT_Roof_Terracotta"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Roof_R",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Roof_Slope.SM_HACKIT_Roof_Slope",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta.MI_HACKIT_Roof_Terracotta"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Roof_Ridge",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Roof_Ridge.SM_HACKIT_Roof_Ridge",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta.MI_HACKIT_Roof_Terracotta"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Gable_Closures",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Gable_Closure.SM_HACKIT_Gable_Closure",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta.MI_HACKIT_Roof_Terracotta"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Eaves",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Eaves_Fascia.SM_HACKIT_Eaves_Fascia",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Roof_Terracotta.MI_HACKIT_Roof_Terracotta"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Balcony",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Balcony_Railing.SM_HACKIT_Balcony_Railing",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Dark_Wood.MI_HACKIT_Dark_Wood"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Gallery_Floor",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Floor_Module.SM_HACKIT_Floor_Module",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Floor_Colonial.MI_HACKIT_Floor_Colonial"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Arch_A",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Arch_Bay.SM_HACKIT_Arch_Bay",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Arch_B",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Arch_Bay.SM_HACKIT_Arch_Bay",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Column_A",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Column.SM_HACKIT_Column",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Column_B",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Column.SM_HACKIT_Column",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Column_C",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Column.SM_HACKIT_Column",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Plaster_Exterior.MI_HACKIT_Plaster_Exterior"
+      ],
+      "valid": true
+    },
+    {
+      "label": "HACKIT_Gallery_Beam",
+      "folder": "JatunWasi/Hacienda_Kit_V1/Preview",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh": "/Game/JWN/Architecture/Hacienda_Kit_V1/SM_HACKIT_Gallery_Beam.SM_HACKIT_Gallery_Beam",
+      "materials": [
+        "/Game/JWN/Architecture/Hacienda_Kit_V1/MI_HACKIT_Dark_Wood.MI_HACKIT_Dark_Wood"
+      ],
+      "valid": true
+    }
+  ],
+  "duplicates": []
+}

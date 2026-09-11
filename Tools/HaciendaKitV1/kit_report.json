@@ -1,0 +1,44 @@
+{
+  "status": "REJECTED_AFTER_TWO_CORRECTION_CYCLES_LEVEL_UNSAVED",
+  "errors": [],
+  "warnings": [
+    "Plaster remains dark/green and reads as stone across full walls.",
+    "Roof mass and overhang dominate the facade and gallery.",
+    "Gable closures and roof junction remain visually unresolved.",
+    "Portal and windows remain below production-detail quality.",
+    "Human-scale capture has no explicit human reference."
+  ],
+  "quality": {
+    "uv0_valid": true,
+    "uv1_valid": true,
+    "normals_valid": true,
+    "collisions_valid": true,
+    "open_boundaries": 0,
+    "null_material_slots": 0,
+    "materials_valid_technical": true,
+    "texel_density_valid_visual": false
+  },
+  "dimensions": {
+    "wall_thickness_valid": true,
+    "door_opening_valid": true,
+    "window_opening_valid": true,
+    "arch_curve_valid": true,
+    "column_proportions_valid": true,
+    "roof_closed": true,
+    "roof_floating_parts": 2,
+    "roof_junction_valid": false
+  },
+  "audit": {
+    "captures_completed": 8,
+    "correction_cycles": 2,
+    "overall_score": 4.1,
+    "critical_issues": 2,
+    "major_issues": 4,
+    "minor_issues": 2,
+    "approved_for_production": false,
+    "map_check_errors": 0,
+    "map_check_warnings": 0,
+    "pie_errors": 0,
+    "level_saved": false
+  }
+}

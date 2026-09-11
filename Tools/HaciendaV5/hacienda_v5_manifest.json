@@ -1,0 +1,19 @@
+{
+  "status": "BUILT_NOT_APPROVED_UNSAVED",
+  "assets": [],
+  "actors": [],
+  "materials": [
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Plaster_Exterior",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Plaster_Interior",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Stone",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Wood",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Roof",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Floor_Tile",
+    "/Game/JWN/Architecture/Hacienda_V5/Materials/MI_HACV5_Floor_Wood"
+  ],
+  "v4_backup_actors": 47,
+  "static_mesh_assets_present": 29,
+  "material_instances_present": 7,
+  "v5_actors_present": 75,
+  "v4_backup_retained": true
+}

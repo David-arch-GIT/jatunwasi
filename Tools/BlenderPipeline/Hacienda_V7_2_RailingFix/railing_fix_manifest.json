@@ -1,0 +1,10 @@
+{
+  "source_object": "EXP_ExteriorBalcony",
+  "export_object": "EXP_ExteriorBalcony_RailingFix",
+  "source_asset": "/Game/JWN/Architecture/Hacienda_V7/Meshes/EXP_ExteriorBalcony",
+  "temporary_destination": "/Game/JWN/Architecture/Hacienda_V7/RailingFixValidation/EXP_ExteriorBalcony_RailingFix",
+  "opening_center_x_m": -5.29,
+  "opening_width_cm": 172.00000000000006,
+  "rail_y_m": -6.65,
+  "fbx": "C:\\UnrealProjects\\JatunWasiNawpakay\\Tools\\BlenderPipeline\\Hacienda_V7_2_RailingFix\\JW_Hacienda_V7_RailingFix.fbx"
+}

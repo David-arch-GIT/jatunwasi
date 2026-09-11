@@ -1,0 +1,30 @@
+{
+  "collection": "EXPORT_UNREAL",
+  "objects": [
+    "EXP_Foundation_Floors",
+    "EXP_ExteriorWalls_Ground",
+    "EXP_InteriorWalls_Ground",
+    "EXP_ExteriorWalls_Upper",
+    "EXP_InteriorWalls_Upper",
+    "EXP_Roofs",
+    "EXP_RoofTrim",
+    "EXP_Timber_Galleries",
+    "EXP_ExteriorBalcony",
+    "EXP_Staircase",
+    "EXP_StonePlinth",
+    "EXP_CornicesTrim",
+    "EXP_Windows",
+    "EXP_Shutters",
+    "EXP_InteriorDoors_West",
+    "EXP_InteriorDoors_East",
+    "EXP_InteriorDoors_Main",
+    "EXP_MainDoor_Left",
+    "EXP_MainDoor_Right",
+    "EXP_Architectural_Misc"
+  ],
+  "mesh_count": 20,
+  "triangles": 86788,
+  "reference_only_excluded": true,
+  "cameras_excluded": true,
+  "lights_excluded": true
+}
