@@ -1,0 +1,8 @@
+Fecha,Zona,Metrica,Antes,Despues,Unidad,Archivo_evidencia,Estado
+2026-10-03,Global,"Conectividad find_path (5 rutas clave)","-","5/5 validas no parciales",rutas,"Saved/ClaudeBackups/nav_paths.json",Verificado
+2026-10-03,Plaza,"Proyeccion del PlayerStart al NavMesh","-205 (flotando)","0 (sobre NavMesh)","cm (dz)","Saved/ClaudeBackups/nav_audit.json",Verificado
+2026-10-03,Bosque,"Contencion de teletransporte (puntos que NO proyectan)","-","3 de 4 puntos bloqueados",puntos,"Saved/ClaudeBackups/nav_audit.json",Verificado
+"(de memoria)",Global,"Draw calls","~2200","~423","draw calls","PENDIENTE: re-medir y citar archivo","Por verificar"
+"(de memoria)",Global,"Texturas en memoria","~1200","~354",MB,"PENDIENTE: re-medir y citar archivo","Por verificar"
+"(de memoria)",Convento,"Triangulos de la zona","-","~85900",triangulos,"PENDIENTE: re-medir y citar archivo","Por verificar"
+"(de memoria)",Bosque,"Instancias de follaje","-","~29450",instancias,"PENDIENTE: re-medir y citar archivo","Por verificar"
