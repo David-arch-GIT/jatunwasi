@@ -1,0 +1,26 @@
+Begin Object Class=/Script/BlueprintGraph.K2Node_CustomEvent Name="K2Node_CustomEvent_900"
+   CustomFunctionName="Alternar"
+   NodePosX=-480
+   NodePosY=240
+   NodeGuid=AA000000000000000000000000000901
+   CustomProperties Pin (PinId=AA000000000000000000000000000902,PinName="OutputDelegate",Direction="EGPD_Output",PinType.PinCategory="delegate",PinType.PinSubCategoryMemberReference=(MemberName="Alternar"))
+   CustomProperties Pin (PinId=AA000000000000000000000000000903,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec",LinkedTo=(K2Node_CallFunction_900 CC000000000000000000000000000902,))
+End Object
+Begin Object Class=/Script/BlueprintGraph.K2Node_VariableGet Name="K2Node_VariableGet_900"
+   VariableReference=(MemberName="Panel",bSelfContext=True)
+   NodePosX=-250
+   NodePosY=400
+   NodeGuid=BB000000000000000000000000000901
+   CustomProperties Pin (PinId=BB000000000000000000000000000902,PinName="Panel",Direction="EGPD_Output",PinType.PinCategory="object",PinType.PinSubCategoryObject=/Script/Engine.StaticMeshComponent'"/Script/Engine.StaticMeshComponent"',LinkedTo=(K2Node_CallFunction_900 CC000000000000000000000000000903,))
+   CustomProperties Pin (PinId=BB000000000000000000000000000904,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node","Target","Target"),Direction="EGPD_Input",PinType.PinCategory="object",PinType.PinSubCategoryObject=/Script/Engine.Actor'"/Script/Engine.Actor"')
+End Object
+Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_900"
+   FunctionReference=(MemberParent=/Script/CoreUObject.Class'"/Script/Engine.SceneComponent"',MemberName="ToggleVisibility")
+   NodePosX=-20
+   NodePosY=240
+   NodeGuid=CC000000000000000000000000000901
+   CustomProperties Pin (PinId=CC000000000000000000000000000902,PinName="execute",Direction="EGPD_Input",PinType.PinCategory="exec",LinkedTo=(K2Node_CustomEvent_900 AA000000000000000000000000000903,))
+   CustomProperties Pin (PinId=CC000000000000000000000000000904,PinName="then",Direction="EGPD_Output",PinType.PinCategory="exec")
+   CustomProperties Pin (PinId=CC000000000000000000000000000903,PinName="self",PinFriendlyName=NSLOCTEXT("K2Node","Target","Target"),Direction="EGPD_Input",PinType.PinCategory="object",PinType.PinSubCategoryObject=/Script/Engine.SceneComponent'"/Script/Engine.SceneComponent"',LinkedTo=(K2Node_VariableGet_900 BB000000000000000000000000000902,))
+   CustomProperties Pin (PinId=CC000000000000000000000000000905,PinName="bPropagateToChildren",Direction="EGPD_Input",PinType.PinCategory="bool",DefaultValue="false")
+End Object

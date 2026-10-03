@@ -1,35 +1,40 @@
 =====================================================
- JATUNWASI ÑAWPAQAY — AVANCE PARA DOCENTES
+ JATUNWASI NAWPAQAY - INSTRUCCIONES (Meta Quest 2)
 =====================================================
 
 CONTENIDO:
-- JatunWasi_Nawpaqay_AVANCE_2026-09-02.apk  -> la aplicacion (instalar en el Quest 2)
-- ARREGLO_VISOR_antes_de_defensa.bat        -> evita el cuelgue al quitarse el visor
+- JatunWasi_Nawpaqay_build53_FLUIDO_20260911.apk  -> la aplicacion (instalar en el Quest 2)
+- ARREGLO_VISOR_antes_de_defensa.bat              -> evita el cuelgue al quitarse el visor
 
 -----------------------------------------------------
 COMO INSTALAR (una vez):
 -----------------------------------------------------
 1. Conecta el Quest 2 por USB a la PC (acepta el permiso en el visor).
 2. Instala el APK con SideQuest (arrastrar el .apk) o por adb:
-   adb install -r JatunWasi_Nawpaqay_AVANCE_2026-09-02.apk
+   adb install -r JatunWasi_Nawpaqay_build53_FLUIDO_20260911.apk
 
 -----------------------------------------------------
 ANTES DE MOSTRARLO / DEFENSA (IMPORTANTE):
 -----------------------------------------------------
 1. Con el Quest conectado por USB, doble clic en:
    ARREGLO_VISOR_antes_de_defensa.bat
-   (Esto evita que la app se cuelgue al quitarse/ponerse el visor. Dura 24h.)
+   (Pausa el Guardian + sensor de proximidad = evita que la app se cuelgue
+    al quitarse/ponerse el visor.)
    -> Se borra si REINICIAS el visor: en ese caso, vuelve a ejecutarlo.
 
-2. Abre la app UNA vez y deja que cargue completa (asi queda "caliente" y
-   arranca rapido despues). Si el primer arranque tarda o se traba, cierrala
-   y abrela de nuevo.
+2. GARANTIA 100%: pega un pedacito de cinta opaca sobre el sensor de
+   proximidad (el huequito entre las dos lentes). Asi el visor nunca
+   detecta que te lo quitas y NUNCA se cuelga.
+
+3. El visor debe estar FRIO y CARGADO. Un visor caliente por horas de uso
+   rinde peor. Abre la app UNA vez y deja que cargue completa (queda
+   "caliente" y arranca rapido despues).
 
 -----------------------------------------------------
 COMO USARLO EN LA DEMO:
 -----------------------------------------------------
 - Apareces en la HACIENDA. Camina por las zonas (convento, templo, plaza, bosque).
-- Con el arreglo del .bat activo, quitarse/ponerse el visor NO cuelga la app.
+- Con el .bat activo + la cinta, quitarse/ponerse el visor NO cuelga la app.
 - Para pasar el visor a otra persona: puede quitarselo y ponerselo sin problema.
 
-Version de avance. Se seguira optimizando.
+Version build53 (fluidez optimizada: plaza, texturas, navegacion).
