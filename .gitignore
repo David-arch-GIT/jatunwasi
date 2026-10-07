@@ -58,3 +58,6 @@ Content/LevelPrototyping/
 # --- Config de herramientas (no es la tesis) ---
 .claude/
 .codex/
+
+# Backups locales de mapas (seguridad, no versionar)
+*_BACKUP_PRE_*.umap

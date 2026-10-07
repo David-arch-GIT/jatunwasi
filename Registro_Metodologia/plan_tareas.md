@@ -7,9 +7,10 @@
 - [x] Guia de controles sobre foto real Quest 2, colocada en plaza, auto-cierre 30s — 2026-09-30/10-03
 - [x] Optimizacion Quest (bosque, Nanite fallback, config) — 2026-09-22
 - [x] Version 2 en git (rama) — 2026-10-03 — commit f72cd96
+- [x] Relieve natural de bosque (rocas/troncos/helechos/arbustos por PCG instanciado, exclusion NavMesh, culling 70m) — 2026-10-03 — 3659 piezas + peniascos grandes + suelo texturizado (MI_JW_Ground_Earth_V3) — scripts 361-365 — pendiente test en visor
 
 ## En curso
-- [ ] Contencion del avance con palanca (compuerta NavMesh en BP_XRPawn, o solo-teletransporte) — Blueprint, con el usuario
+- [x] Contencion del avance con palanca — HECHA 2026-10-06 (correa NavMesh en BP_XRPawn, conserva caminar+teletransporte) — pendiente test en visor
 - [ ] Registro de tiempos/defectos/mediciones (sistema iniciado 2026-10-03; mantener en cada tarea)
 
 ## Pendiente
