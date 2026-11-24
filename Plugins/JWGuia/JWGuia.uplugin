@@ -1,0 +1,20 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "JW Guia (Adela)",
+	"Description": "Jatun Wasi: Adela guia que acompana al visitante (camina delante, espera, estaciones, preguntas) sin chocar con narraciones ni Convai.",
+	"Category": "JatunWasi",
+	"CreatedBy": "Jatun Wasi",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"EnabledByDefault": true,
+	"Modules": [
+		{
+			"Name": "JWGuia",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

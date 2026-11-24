@@ -21,7 +21,7 @@ Invoke-RestMethod -Uri "$API/execute_script" -Method Post -Body (@{script="PHASE
 $k = 0; while (-not (Test-Path $o) -and $k -lt 120) { Start-Sleep -Milliseconds 250; $k++ }
 Invoke-RestMethod -Uri "$API/pie_control" -Method Post -Body '{"operation":"start"}' -ContentType "application/json" -TimeoutSec 60 | Out-Null
 $k = 0; do { Start-Sleep 1; $k++; $st = Invoke-RestMethod -Uri "$API/pie_control" -Method Post -Body '{"operation":"status"}' -ContentType "application/json" } while (-not $st.pie_active -and $k -lt 60)
-Wait-Secs 8
+Wait-Secs 30   # despues de la intro de Adela (27 s, prioridad mayor)
 $lista = (Invoke-Py "PHASE='lista'" "test470_lista.json").cartelas
 $tabla = @()
 for ($i = 0; $i -lt $lista.Count; $i++) {
