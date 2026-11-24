@@ -1,0 +1,26 @@
+[
+  {
+    "zona": "plaza",
+    "titulo": "La Plaza Colonial",
+    "bienvenida": "Bienvenido al corazon del pueblo.",
+    "relato": "Detente un momento en el centro de la plaza. Durante siglos, este empedrado fue el latido del pueblo del valle de Cochabamba. Al amanecer llegaban las caseras con sus canastas de papa, chuno y maiz; al mediodia repicaban las campanas; y al caer la tarde, bajo estos portales de arcos de piedra y adobe, se tejian los romances y las habladurias. Mira las casonas encaladas de teja roja, los balcones de madera, la fuente que reunia a todos. Aqui se mezclaron la sangre andina y la espanola, el quechua y el castellano, hasta formar lo que hoy somos. Desde esta plaza nacen tres caminos: uno te lleva a la hacienda, otro al convento, otro al templo. Elige, y deja que cada piedra te cuente su memoria."
+  },
+  {
+    "zona": "hacienda",
+    "titulo": "La Hacienda Colonial",
+    "bienvenida": "Entras a la casa grande del valle.",
+    "relato": "Cruzas el umbral de una hacienda, la casa grande que durante generaciones goberno estas tierras. Sentiste el frescor del adobe encalado y el olor de la madera vieja. En torno a este patio de columnas giraba toda la vida: en la cocina ardia el fogon de barro entre cantaros y la olla nunca dejaba de humear; en el comedor se sentaba la familia patrona; y en la galeria del sur, la Sala de Folklore guarda todavia la pollera de la chola cochabambina, el sombrero del varon, y los instrumentos de los valles: el charango que rie, la quena que llora, la zampona, la tarka. Sube por la escalera al salon de baile del segundo piso, donde alguna vez giraron los valses. Cada rincon de esta casa respira el trabajo, la fiesta y las historias de los que aqui vivieron."
+  },
+  {
+    "zona": "convento",
+    "titulo": "El Convento Franciscano",
+    "bienvenida": "Llegas al silencio del convento.",
+    "relato": "Baja la voz: estas en un convento franciscano, donde el silencio tambien reza. Aqui los frailes de habito marron, cenido con el cordon de tres nudos, entregaron su vida a la pobreza, la castidad y la obediencia, siguiendo a San Francisco de Asis. Recorre el claustro de arcos de medio punto que abraza el patio; asomate a las celdas de catre angosto donde dormian apenas unas horas; imagina el refectorio en penumbra y el canto grave de los maitines antes del alba. Fue desde conventos como este que llego la fe, la lectura y la musica a todo el valle. Pero la noche guarda tambien sus leyendas: dicen que entre estos muros, cuando nadie mira, aun vagan las sombras de viejas penitencias. Camina con respeto, que el pasado aqui no ha terminado de irse."
+  },
+  {
+    "zona": "templo",
+    "titulo": "El Templo",
+    "bienvenida": "Ingresas al corazon sagrado del pueblo.",
+    "relato": "Alza la vista: estas en el templo, el corazon sagrado del pueblo colonial. Lo que ves es arte barroco mestizo, esa fusion prodigiosa donde la mano del artesano andino talla angeles con rasgos propios y viste de oro a los santos. Deja que la nave y la cupula te lleven hacia el retablo mayor, encendido en pan de oro. Ahi estan el pulpito desde donde tronaban los sermones, el confesionario de los secretos, y las imagenes que aun hoy mueven multitudes: la Virgen de Urkupina que colma de bendiciones, el Senor de Santa Vera Cruz, el Nino milagroso. Durante siglos, bajo estas bovedas, el pueblo lloro, pidio y agradecio. No es solo un edificio de piedra: es la memoria viva de la fe que dio alma a este valle."
+  }
+]

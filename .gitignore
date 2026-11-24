@@ -61,3 +61,5 @@ Content/LevelPrototyping/
 
 # Backups locales de mapas (seguridad, no versionar)
 *_BACKUP_PRE_*.umap
+
+Build/CLI_APK/

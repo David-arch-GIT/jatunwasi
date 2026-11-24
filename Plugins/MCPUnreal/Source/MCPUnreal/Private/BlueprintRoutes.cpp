@@ -20,6 +20,8 @@
 #include "K2Node_CallFunction.h"
 #include "K2Node_VariableGet.h"
 #include "K2Node_VariableSet.h"
+#include "K2Node_ComponentBoundEvent.h"
+#include "K2Node_DynamicCast.h"
 #include "Kismet2/BlueprintEditorUtils.h"
 #include "Kismet2/KismetEditorUtilities.h"
 #include "AssetRegistry/AssetRegistryModule.h"
@@ -56,6 +58,8 @@ namespace MCPUnreal {
     PinJson->SetStringField(TEXT("direction"),
                             Pin->Direction == EGPD_Input ? TEXT("input") : TEXT("output"));
     PinJson->SetStringField(TEXT("default_value"), Pin->DefaultValue);
+    PinJson->SetStringField(TEXT("default_object"),
+                            Pin->DefaultObject ? Pin->DefaultObject->GetPathName() : TEXT(""));
 
     // Connected pin references.
     TArray<TSharedPtr<FJsonValue>> Links;
@@ -307,7 +311,24 @@ namespace MCPUnreal {
       }
 
       FEdGraphPinType PinType;
-      PinType.PinCategory = FName(*VarType);
+      if (VarType == TEXT("double") || VarType == TEXT("float") || VarType == TEXT("real")) {
+        PinType.PinCategory = UEdGraphSchema_K2::PC_Real;
+        PinType.PinSubCategory = UEdGraphSchema_K2::PC_Double;
+      } else if (VarType.StartsWith(TEXT("object:"))) {
+        // referencia a objeto: "object:/Script/Engine.AmbientSound" o "object:/Game/.../BP_X.BP_X_C"
+        UClass* ObjClass = LoadObject<UClass>(nullptr, *VarType.RightChop(7));
+        if (!ObjClass) {
+          SendError(OnComplete, FString::Printf(TEXT("Class '%s' not found"), *VarType));
+          return true;
+        }
+        PinType.PinCategory = UEdGraphSchema_K2::PC_Object;
+        PinType.PinSubCategoryObject = ObjClass;
+      } else if (VarType == TEXT("vector")) {
+        PinType.PinCategory = UEdGraphSchema_K2::PC_Struct;
+        PinType.PinSubCategoryObject = TBaseStructure<FVector>::Get();
+      } else {
+        PinType.PinCategory = FName(*VarType);
+      }
       FBlueprintEditorUtils::AddMemberVariable(Blueprint, FName(*VarName), PinType);
       bNeedsCompile = true;
     }
@@ -504,7 +525,12 @@ namespace MCPUnreal {
         return true;
       }
 
-      SourcePin->MakeLinkTo(TargetPin);
+      // via oficial del esquema (avisa a los nodos: necesario para pines comodin, p.ej. Cast To X);
+      // si el esquema la rechaza, se fuerza el enlace como antes
+      const UEdGraphSchema* Schema = Graph->GetSchema();
+      if (!(Schema && Schema->TryCreateConnection(SourcePin, TargetPin))) {
+        SourcePin->MakeLinkTo(TargetPin);
+      }
       bNeedsCompile = true;
     }
     // --- disconnect_pins ---
@@ -589,6 +615,289 @@ namespace MCPUnreal {
           }
         }
       }
+    }
+    // --- add_call_function --- (fully configured CallFunction node)
+    else if (Operation == TEXT("add_call_function")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString FuncClassStr = Body->GetStringField(TEXT("function_class"));
+      const FString FuncName = Body->GetStringField(TEXT("function_name"));
+      const double PosX = Body->GetNumberField(TEXT("pos_x"));
+      const double PosY = Body->GetNumberField(TEXT("pos_y"));
+
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->FunctionGraphs) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      if (!Graph) {
+        for (UEdGraph* G : Blueprint->UbergraphPages) {
+          if (G->GetName() == GraphName) { Graph = G; break; }
+        }
+      }
+      if (!Graph) {
+        SendError(OnComplete, FString::Printf(TEXT("Graph '%s' not found"), *GraphName));
+        return true;
+      }
+
+      UClass* FuncClass = FindFirstObject<UClass>(*FuncClassStr, EFindFirstObjectOptions::None);
+      UFunction* Func = FuncClass ? FuncClass->FindFunctionByName(FName(*FuncName)) : nullptr;
+      if (!Func) {
+        SendError(OnComplete, FString::Printf(TEXT("Function '%s::%s' not found"), *FuncClassStr,
+                                              *FuncName));
+        return true;
+      }
+
+      UK2Node_CallFunction* Node = NewObject<UK2Node_CallFunction>(Graph);
+      Node->CreateNewGuid();
+      Node->SetFromFunction(Func);
+      Node->NodePosX = static_cast<int32>(PosX);
+      Node->NodePosY = static_cast<int32>(PosY);
+      Graph->AddNode(Node, false, false);
+      Node->PostPlacedNewNode();
+      Node->AllocateDefaultPins();
+      FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified(Blueprint);
+
+      TSharedPtr<FJsonObject> ResponseJson = MakeShareable(new FJsonObject());
+      ResponseJson->SetBoolField(TEXT("success"), true);
+      ResponseJson->SetStringField(TEXT("node_id"), Node->NodeGuid.ToString());
+      ResponseJson->SetObjectField(TEXT("node"), NodeToJson(Node));
+      SendJson(OnComplete, ResponseJson);
+      return true;
+    }
+    // --- add_member_set / add_member_get --- (external member variable node)
+    else if (Operation == TEXT("add_member_set") || Operation == TEXT("add_member_get")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString MemberClassStr = Body->GetStringField(TEXT("member_class"));
+      const FString MemberName = Body->GetStringField(TEXT("member_name"));
+      const double PosX = Body->GetNumberField(TEXT("pos_x"));
+      const double PosY = Body->GetNumberField(TEXT("pos_y"));
+
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->FunctionGraphs) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      if (!Graph) {
+        for (UEdGraph* G : Blueprint->UbergraphPages) {
+          if (G->GetName() == GraphName) { Graph = G; break; }
+        }
+      }
+      if (!Graph) {
+        SendError(OnComplete, FString::Printf(TEXT("Graph '%s' not found"), *GraphName));
+        return true;
+      }
+
+      UClass* MemberClass = FindFirstObject<UClass>(*MemberClassStr, EFindFirstObjectOptions::None);
+      FProperty* Prop = MemberClass ? FindFProperty<FProperty>(MemberClass, FName(*MemberName)) : nullptr;
+      if (!Prop) {
+        SendError(OnComplete, FString::Printf(TEXT("Member '%s::%s' not found"), *MemberClassStr,
+                                              *MemberName));
+        return true;
+      }
+
+      UK2Node_Variable* Node = nullptr;
+      if (Operation == TEXT("add_member_set")) {
+        Node = NewObject<UK2Node_VariableSet>(Graph);
+      } else {
+        Node = NewObject<UK2Node_VariableGet>(Graph);
+      }
+      Node->CreateNewGuid();
+      Node->VariableReference.SetExternalMember(FName(*MemberName), MemberClass);
+      Node->NodePosX = static_cast<int32>(PosX);
+      Node->NodePosY = static_cast<int32>(PosY);
+      Graph->AddNode(Node, false, false);
+      Node->PostPlacedNewNode();
+      Node->AllocateDefaultPins();
+      FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified(Blueprint);
+
+      TSharedPtr<FJsonObject> ResponseJson = MakeShareable(new FJsonObject());
+      ResponseJson->SetBoolField(TEXT("success"), true);
+      ResponseJson->SetStringField(TEXT("node_id"), Node->NodeGuid.ToString());
+      ResponseJson->SetObjectField(TEXT("node"), NodeToJson(Node));
+      SendJson(OnComplete, ResponseJson);
+      return true;
+    }
+    // --- add_component_event --- (e.g. "On Started Talking (ConvaiChatbot)")
+    else if (Operation == TEXT("add_component_event")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString CompName = Body->GetStringField(TEXT("component_name"));
+      const FString DelegateName = Body->GetStringField(TEXT("delegate_name"));
+      const double PosX = Body->GetNumberField(TEXT("pos_x"));
+      const double PosY = Body->GetNumberField(TEXT("pos_y"));
+
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->UbergraphPages) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      if (!Graph) {
+        SendError(OnComplete, FString::Printf(TEXT("Event graph '%s' not found"), *GraphName));
+        return true;
+      }
+
+      UClass* BPClass = Blueprint->SkeletonGeneratedClass ? Blueprint->SkeletonGeneratedClass
+                                                          : Blueprint->GeneratedClass;
+      FObjectProperty* CompProp =
+          BPClass ? FindFProperty<FObjectProperty>(BPClass, FName(*CompName)) : nullptr;
+      if (!CompProp || !CompProp->PropertyClass) {
+        SendError(OnComplete, FString::Printf(TEXT("Component '%s' not found"), *CompName));
+        return true;
+      }
+      FMulticastDelegateProperty* DelProp =
+          FindFProperty<FMulticastDelegateProperty>(CompProp->PropertyClass, FName(*DelegateName));
+      if (!DelProp) {
+        SendError(OnComplete, FString::Printf(TEXT("Delegate '%s' not found on '%s'"),
+                                              *DelegateName, *CompProp->PropertyClass->GetName()));
+        return true;
+      }
+
+      UK2Node_ComponentBoundEvent* Node = NewObject<UK2Node_ComponentBoundEvent>(Graph);
+      Node->CreateNewGuid();
+      Node->InitializeComponentBoundEventParams(CompProp, DelProp);
+      Node->NodePosX = static_cast<int32>(PosX);
+      Node->NodePosY = static_cast<int32>(PosY);
+      Graph->AddNode(Node, false, false);
+      Node->PostPlacedNewNode();
+      Node->AllocateDefaultPins();
+      FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified(Blueprint);
+
+      TSharedPtr<FJsonObject> ResponseJson = MakeShareable(new FJsonObject());
+      ResponseJson->SetBoolField(TEXT("success"), true);
+      ResponseJson->SetStringField(TEXT("node_id"), Node->NodeGuid.ToString());
+      ResponseJson->SetObjectField(TEXT("node"), NodeToJson(Node));
+      SendJson(OnComplete, ResponseJson);
+      return true;
+    }
+    // --- set_pin_object --- (assign an asset, e.g. an AnimSequence, to an object pin)
+    else if (Operation == TEXT("set_pin_object")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString NodeId = Body->GetStringField(TEXT("node_id"));
+      const FString PinName = Body->GetStringField(TEXT("pin_name"));
+      const FString ObjPath = Body->GetStringField(TEXT("object_path"));
+
+      UObject* Obj = StaticLoadObject(UObject::StaticClass(), nullptr, *ObjPath);
+      if (!Obj) {
+        SendError(OnComplete, FString::Printf(TEXT("Object '%s' not found"), *ObjPath));
+        return true;
+      }
+
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->FunctionGraphs) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      if (!Graph) {
+        for (UEdGraph* G : Blueprint->UbergraphPages) {
+          if (G->GetName() == GraphName) { Graph = G; break; }
+        }
+      }
+      UEdGraphPin* FoundPin = nullptr;
+      if (Graph) {
+        FGuid NodeGuid;
+        FGuid::Parse(NodeId, NodeGuid);
+        for (UEdGraphNode* Node : Graph->Nodes) {
+          if (Node->NodeGuid == NodeGuid) {
+            FoundPin = Node->FindPin(FName(*PinName));
+            break;
+          }
+        }
+      }
+      if (!FoundPin) {
+        SendError(OnComplete, TEXT("Node or pin not found"));
+        return true;
+      }
+      FoundPin->DefaultObject = Obj;
+      FoundPin->DefaultValue.Empty();
+      bNeedsCompile = true;
+    }
+    // --- add_event --- (override event of the parent class, e.g. "ReceiveTick", "ReceiveBeginPlay").
+    // New Blueprints come with these as disabled "ghost" nodes; if one exists it is ENABLED and returned.
+    else if (Operation == TEXT("add_event")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString EventName = Body->GetStringField(TEXT("event_name"));
+      const double PosX = Body->GetNumberField(TEXT("pos_x"));
+      const double PosY = Body->GetNumberField(TEXT("pos_y"));
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->UbergraphPages) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      UClass* ParentClass = Blueprint->ParentClass;
+      UFunction* Func = ParentClass ? ParentClass->FindFunctionByName(FName(*EventName)) : nullptr;
+      if (!Graph || !Func) {
+        SendError(OnComplete, FString::Printf(TEXT("Graph or event '%s' not found"), *EventName));
+        return true;
+      }
+      UClass* SigClass = Func->GetOwnerClass();
+      UK2Node_Event* Node = FBlueprintEditorUtils::FindOverrideForFunction(Blueprint, SigClass, FName(*EventName));
+      if (!Node) {
+        Node = NewObject<UK2Node_Event>(Graph);
+        Node->EventReference.SetExternalMember(FName(*EventName), SigClass);
+        Node->bOverrideFunction = true;
+        Node->CreateNewGuid();
+        Node->NodePosX = static_cast<int32>(PosX);
+        Node->NodePosY = static_cast<int32>(PosY);
+        Graph->AddNode(Node, false, false);
+        Node->PostPlacedNewNode();
+        Node->AllocateDefaultPins();
+      }
+      Node->SetEnabledState(ENodeEnabledState::Enabled, false);
+      FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified(Blueprint);
+      TSharedPtr<FJsonObject> ResponseJson = MakeShareable(new FJsonObject());
+      ResponseJson->SetBoolField(TEXT("success"), true);
+      ResponseJson->SetStringField(TEXT("node_id"), Node->NodeGuid.ToString());
+      ResponseJson->SetObjectField(TEXT("node"), NodeToJson(Node));
+      SendJson(OnComplete, ResponseJson);
+      return true;
+    }
+    // --- add_dynamic_cast --- ("Cast To X"; target_class = class path, e.g. "/Script/Engine.AmbientSound"
+    // or "/Game/XRFramework/Blueprints/BP_XRPawn.BP_XRPawn_C")
+    else if (Operation == TEXT("add_dynamic_cast")) {
+      const FString GraphName = Body->GetStringField(TEXT("graph_name"));
+      const FString ClassPath = Body->GetStringField(TEXT("target_class"));
+      const double PosX = Body->GetNumberField(TEXT("pos_x"));
+      const double PosY = Body->GetNumberField(TEXT("pos_y"));
+      UEdGraph* Graph = nullptr;
+      for (UEdGraph* G : Blueprint->UbergraphPages) {
+        if (G->GetName() == GraphName) { Graph = G; break; }
+      }
+      UClass* Target = LoadObject<UClass>(nullptr, *ClassPath);
+      if (!Graph || !Target) {
+        SendError(OnComplete, FString::Printf(TEXT("Graph or class '%s' not found"), *ClassPath));
+        return true;
+      }
+      UK2Node_DynamicCast* Node = NewObject<UK2Node_DynamicCast>(Graph);
+      Node->TargetType = Target;
+      Node->CreateNewGuid();
+      Node->NodePosX = static_cast<int32>(PosX);
+      Node->NodePosY = static_cast<int32>(PosY);
+      Graph->AddNode(Node, false, false);
+      Node->PostPlacedNewNode();
+      Node->AllocateDefaultPins();
+      FBlueprintEditorUtils::MarkBlueprintAsStructurallyModified(Blueprint);
+      TSharedPtr<FJsonObject> ResponseJson = MakeShareable(new FJsonObject());
+      ResponseJson->SetBoolField(TEXT("success"), true);
+      ResponseJson->SetStringField(TEXT("node_id"), Node->NodeGuid.ToString());
+      ResponseJson->SetObjectField(TEXT("node"), NodeToJson(Node));
+      SendJson(OnComplete, ResponseJson);
+      return true;
+    }
+    // --- enable_node --- (turn a disabled/ghost node into a real one)
+    else if (Operation == TEXT("enable_node")) {
+      const FString NodeId = Body->GetStringField(TEXT("node_id"));
+      FGuid NodeGuid;
+      FGuid::Parse(NodeId, NodeGuid);
+      bool bFound = false;
+      TArray<UEdGraph*> AllGraphs;
+      Blueprint->GetAllGraphs(AllGraphs);
+      for (UEdGraph* G : AllGraphs) {
+        for (UEdGraphNode* N : G->Nodes) {
+          if (N && N->NodeGuid == NodeGuid) {
+            N->SetEnabledState(ENodeEnabledState::Enabled, false);
+            bFound = true;
+          }
+        }
+      }
+      if (!bFound) {
+        SendError(OnComplete, TEXT("Node not found"));
+        return true;
+      }
+      bNeedsCompile = true;
     }
     // --- compile ---
     else if (Operation == TEXT("compile")) {
