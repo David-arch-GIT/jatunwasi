@@ -218,6 +218,7 @@ private:
 	bool bBuscoConvaiJugador = false;
 	bool bOcupadoUlt = false;
 	float TBusquedaConvai = -100.f;
+	float TDiag = 0.f;
 
 	/** true si otra voz grabada (clase SCL_Voz) esta sonando en este mundo (para no intentar hablar encima). */
 	bool OtraVozSonando() const;

@@ -12,6 +12,10 @@
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
 #include "Sound/SoundClass.h"
+#include "GameFramework/PlayerController.h"
+#include "NavigationSystem.h"
+#include "InputCoreTypes.h"
+#include "JWEntradaVR.h"
 #include "UObject/UObjectIterator.h"
 
 UJWGuiaComponent::UJWGuiaComponent()
@@ -468,6 +472,34 @@ void UJWGuiaComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	}
 	PrevVisitante = U;
 	bPrevValido = true;
+
+#if !UE_BUILD_SHIPPING
+	// DIAGNOSTICO temporal (solo builds Development, no existe en Shipping): estado de la entrada y del NavMesh
+	TDiag += Dt;
+	if (TDiag > 2.f)
+	{
+		TDiag = 0.f;
+		APlayerController* PC = UGameplayStatics::GetPlayerController(this, 0);
+		APawn* PW = UGameplayStatics::GetPlayerPawn(this, 0);
+		const float RX = PC ? PC->GetInputAnalogKeyState(FKey(TEXT("OculusTouch_Right_Thumbstick_X"))) : -9.f;
+		const float RY = PC ? PC->GetInputAnalogKeyState(FKey(TEXT("OculusTouch_Right_Thumbstick_Y"))) : -9.f;
+		const float LX = PC ? PC->GetInputAnalogKeyState(FKey(TEXT("OculusTouch_Left_Thumbstick_X"))) : -9.f;
+		const float LY = PC ? PC->GetInputAnalogKeyState(FKey(TEXT("OculusTouch_Left_Thumbstick_Y"))) : -9.f;
+		const bool TR = PC ? PC->IsInputKeyDown(FKey(TEXT("OculusTouch_Right_Trigger_Click"))) : false;
+		const bool BA = PC ? PC->IsInputKeyDown(FKey(TEXT("OculusTouch_Right_A_Click"))) : false;
+		const FVector PL = PW ? PW->GetActorLocation() : FVector::ZeroVector;
+		bool bNav = false;
+		bool bNavSys = false;
+		if (UNavigationSystemV1* NS = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld()))
+		{
+			bNavSys = true;
+			FNavLocation NL;
+			bNav = NS->ProjectPointToNavigation(PL, NL, FVector(300.f, 300.f, 400.f));
+		}
+		UE_LOG(LogTemp, Warning, TEXT("JWDIAG teclas rx=%.2f ry=%.2f lx=%.2f ly=%.2f trig=%d a=%d | acciones %s | pawn=%.0f,%.0f,%.0f navsys=%d nav=%d pc=%d %s"),
+			RX, RY, LX, LY, TR ? 1 : 0, BA ? 1 : 0, *UJWEntradaVR::Diagnostico(this), PL.X, PL.Y, PL.Z, bNavSys ? 1 : 0, bNav ? 1 : 0, PC ? 1 : 0, *DebugEstado());
+	}
+#endif
 
 	const bool bOcupado = ConvaiOcupado();
 	bOcupadoUlt = bOcupado;
