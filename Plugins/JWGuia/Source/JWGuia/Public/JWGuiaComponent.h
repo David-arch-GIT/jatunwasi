@@ -169,6 +169,13 @@ private:
 
 	void IniciarTramo(int32 I);
 	void IrAlFinal();
+	/** Reinicio: si los creditos del pawn (componente "CreditosFinal") llevan >= 4 s visibles, A o gatillo recargan el mapa. */
+	void ComprobarReinicio(float Dt);
+
+	UPROPERTY(Transient)
+	TObjectPtr<USceneComponent> CreditosVis = nullptr;
+	float TCreditos = 0.f;
+	bool bReiniciando = false;
 
 	UPROPERTY(Transient)
 	TObjectPtr<USkeletalMeshComponent> Malla = nullptr;

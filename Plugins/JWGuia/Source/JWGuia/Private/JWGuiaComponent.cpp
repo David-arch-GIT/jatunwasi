@@ -419,6 +419,51 @@ void UJWGuiaComponent::IniciarTramo(int32 I)
 	Decir(Tramos[I].FraseInicio);
 }
 
+void UJWGuiaComponent::ComprobarReinicio(float Dt)
+{
+	// La lectura de A y del gatillo usa un flanco estable por fotograma: llamarla aqui no le quita la pulsacion al pawn.
+	const bool bA = UJWEntradaVR::BotonAPulsado(this);
+	const bool bG = UJWEntradaVR::GatilloPulsado(this);
+	if (bReiniciando)
+	{
+		return;
+	}
+	if (!CreditosVis)
+	{
+		APawn* P = UGameplayStatics::GetPlayerPawn(this, 0);
+		if (!P)
+		{
+			return;
+		}
+		TArray<USceneComponent*> Comps;
+		P->GetComponents<USceneComponent>(Comps);
+		for (USceneComponent* C : Comps)
+		{
+			if (C && C->GetName().StartsWith(TEXT("CreditosFinal")))
+			{
+				CreditosVis = C;
+				break;
+			}
+		}
+		if (!CreditosVis)
+		{
+			return;
+		}
+	}
+	if (!CreditosVis->IsVisible())
+	{
+		TCreditos = 0.f;
+		return;
+	}
+	TCreditos += Dt;
+	if (TCreditos >= 4.f && (bA || bG))
+	{
+		bReiniciando = true;
+		UE_LOG(LogTemp, Log, TEXT("JWGuia: reinicio del recorrido solicitado tras los creditos"));
+		UGameplayStatics::OpenLevel(this, FName(*UGameplayStatics::GetCurrentLevelName(this, true)));
+	}
+}
+
 void UJWGuiaComponent::IrAlFinal()
 {
 	if (AActor* Owner = GetOwner())
@@ -472,6 +517,10 @@ void UJWGuiaComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	}
 	PrevVisitante = U;
 	bPrevValido = true;
+
+	// Reinicio del recorrido (pedido de la usuaria 2026-11-24): con los creditos finales visibles al menos
+	// 4 s, el boton A o el gatillo derecho recargan el mapa desde el inicio.
+	ComprobarReinicio(Dt);
 
 #if !UE_BUILD_SHIPPING
 	// DIAGNOSTICO temporal (solo builds Development, no existe en Shipping): estado de la entrada y del NavMesh
